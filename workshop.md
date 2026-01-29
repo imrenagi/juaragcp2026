@@ -27,19 +27,25 @@ To use Gemini models, you need an API key.
 3. Create the app by using the following prompt and click build.
 
 ```text
-Create marketing asset image creation. User should be able to upload up to 3 pictures with each max size is 5MB. When the project is created, user should get several ideas on how these 3 image should be merged/combined. User will choose the idea and then the selected idea should be used as the prompt to generate new image. Generate the idea by using gemini api. For generating image, use the selected idea and gemini nano banana to generate the image.
+Build a modern, professional, and visually stunning "Marketing Asset Creator" app.
 
-Use React, Tailwind CSS V4, and Vite.
+**Core Functionality:**
+1.  **Upload**: Allow users to upload up to 3 images (max 5MB each) via a sleek drag-and-drop zone.
+2.  **Analysis & Inspiration**: When images are uploaded, use the Gemini API to analyze them and generate 5 distinct, creative "Remix Ideas" for combining them into a professional marketing asset.
+3.  **Generation**: Allow the user to select an idea. Use the selected idea as a prompt to generate the final merged image using `gemini nano banana`.
 
-The process is as follows:
-1.  **Analyze**: The user will upload 1 to 3 photos. You must analyze them for:
-    *   Key subjects (people, objects, scenery).
-    *   Dominant colors and lighting.
-    *   Artistic style and mood.
+**Design & UI Requirements (Critical):**
+- **Frameworks**: Use React, Tailwind CSS V4, and Vite.
+- **Visual Style**: Create a **premium, polished interface**. Use a dark theme with glassmorphism (translucency), subtle gradients, and rounded corners.
+- **Typography**: Use modern sans-serif fonts (e.g., Inter or Roboto) for a clean look.
+- **Interactions**: Add smooth transitions and hover effects. Use loading skeletons or spinners while the AI is thinking.
+- **Layout**: Ensure it looks professional, with a sidebar or clean centered layout for the results.
 
-2.  **Inspire**: Based on the photos, suggest 5 distinct, creative "Remix Ideas". The idea should help user to create a new image by combining the uploaded images and create professional marketing assets.
-
-3.  **Generate**: Based on the photos, use the selected idea as prompt for combining the images.
+**System Instructions for the AI:**
+1.  **Analyze**: Identify key subjects, dominant colors, and lighting in the user's photos.
+2.  **Inspire**: Suggest 5 ideas. Each idea should have a catchy Title and a descriptive "visual prompt" text.
+    *   *Example Idea*: "Neon Cyberpunk Blend - Merge the subject with a futuristic city background using high contrast neon lighting."
+3.  **Generate**: Output the selected idea to the image generation model.
 ```
 
 ## Step 3: Deploy to Cloud Run
@@ -54,4 +60,3 @@ The process is as follows:
 1. Look at the prompt used to generate the ideas and the final image. Can you improve it?
 2. Check the model used for generating the ideas and the final image. Is it Gemini 3 Flash Preview? How much does it cost to use it?
 3. We are actually building a frontend application and then deploy it to Cloud Run. The API_KEY is there in the code. Is it secure to have it there? How can we make it more secure? What else we can do to make it more production ready?
-```
